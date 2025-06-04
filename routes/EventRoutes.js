@@ -8,10 +8,10 @@ const {
 } = require("../controllers/EventControllers");
 const router = express.Router();
 
-router.get("/event", getAllEvents);
-router.post("/event", createEvents);
-router.get("/event/:id", getSingleEvent);
-router.patch("/event/:id", updateEvent);
-router.delete("/event/:id", deleteEvent);
+router.get("/get-all-events", getAllEvents);
+router.post("/add-events", createEvents);
+router.get("/edit-event/:id", getSingleEvent);
+router.patch("/update-event/:id", updateEvent);
+router.delete("/delete-event/:id", deleteEvent);
 
 module.exports = router;
