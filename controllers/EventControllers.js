@@ -90,7 +90,7 @@ const deleteEvent = async (request, response) => {
     }
     response
       .status(200)
-      .json({ message: "Event Deleted Successfully (Soft Delete)", deletedCount });
+      .json({ message: "Event Deleted Successfully..", deletedCount });
   } catch (error) {
     response.status(500).json({ message: error.message });
   }
