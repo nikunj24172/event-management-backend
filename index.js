@@ -11,7 +11,7 @@ const port = 5000;
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173","https://event-management-frontend-woad.vercel.app"]}));
 const routes = require("./routes/EventRoutes");
 app.use("/api", routes);
 
