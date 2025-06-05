@@ -23,14 +23,8 @@ const getAllEvents = async (request, response) => {
         categorizedEvents.past.push(event);
       }
     });
-    const limitEvents = (list, count = 3) => list.slice(0, count);
-    const limitedCategorizedEvents = {
-      today: limitEvents(categorizedEvents.today),
-      future: limitEvents(categorizedEvents.future),
-      past: limitEvents(categorizedEvents.past),
-    };
 
-    response.status(200).json({ message: limitedCategorizedEvents });
+    response.status(200).json({ message: categorizedEvents });
   } catch (error) {
     response.status(500).json({ message: error.message });
   }

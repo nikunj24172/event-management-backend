@@ -1,11 +1,13 @@
-const { isSameDay, isBefore, isAfter } = require("date-fns");
+const { isSameDay, isBefore, isAfter, startOfDay } = require("date-fns");
 
-const isToday = (date) => isSameDay(new Date(), new Date(date));
+
+const isToday = (date) =>
+  isSameDay(startOfDay(new Date()), startOfDay(new Date(date)));
 
 const isPast = (date) =>
-  isBefore(new Date(date), new Date(date)) &&
-  !isSameDay(new Date(), new Date(date));
+  isBefore(startOfDay(new Date(date)), startOfDay(new Date()));
 
-const isFuture = (date) => isAfter(new Date(date), new Date());
+const isFuture = (date) =>
+  isAfter(startOfDay(new Date(date)), startOfDay(new Date()));
 
 module.exports = { isToday, isPast, isFuture };
